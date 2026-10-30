@@ -1,0 +1,16 @@
+# Bundle patch layer：把本插件插进 DSH profile 的配置树。
+# `name` 必须与安装后的包名完全一致（dsh-memory-palace），否则表现为「装上了但不生效」。
+#
+# 安装（本地开发，直接指向源码目录）：
+#   dsh plugin --profile desktop add "link:D:\\大肥鱼工作包\\dsh-memory-palace"
+# 发布后：
+#   dsh plugin --profile desktop add dsh-memory-palace
+#
+# 这里的 config 只是默认层，用户可以在设置里或 profile 的 cordis.patch.yml 里覆盖。
+- insert:
+    - id: dsh-memory-palace
+      name: dsh-memory-palace
+      config:
+        enabled: true
+        top_k: 5
+        inject_max_tokens: 500
